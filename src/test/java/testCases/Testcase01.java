@@ -1,6 +1,5 @@
-package TestCases;
+package testCases;
 
-import org.example.Main;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -38,6 +37,9 @@ public class Testcase01 {
         SoftAssert soft = new SoftAssert();
 
         soft.assertEquals(driver.getCurrentUrl(),"https://the-internet.herokuapp.com/secure");
+        Assert.assertTrue(driver.getCurrentUrl().contains("secure"));
+
+        Assert.assertTrue(driver.findElement(By.id("flash")).getText().contains("logged into"));
 
 
 
